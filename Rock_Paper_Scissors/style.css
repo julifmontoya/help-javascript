@@ -3,6 +3,12 @@
   padding: 0;
 }
 
+:root {
+  --color-primary: #0e63f3;
+  --color-primary-hover: #0b4dbf;
+  --color-light: #fff;
+}
+
 body {
   background-color: #1377b1;
   font-family: Montserrat, sans-serif;
@@ -80,7 +86,8 @@ header {
   background: darkorange;
 }
 
-#action-message {
+#action-message,
+.time__left {
   text-align: center;
   color: white;
   font-weight: bold;
@@ -107,4 +114,28 @@ header {
 .grey-glow {
   background-color: #464647;
   box-shadow: 0 0 10px #25292b;
+}
+
+.time {
+  text-align: center;
+}
+
+.btn {
+  border-radius: 6px;
+  padding: 5px 10px;
+  font-size: 1.2em;
+  font-weight: 700;
+  font-family: Montserrat, sans-serif;
+}
+
+.btn--white {
+  background-color: var(--color-light);
+  color: var(--color-primary);
+  border: solid 2px var(--color-primary);
+}
+
+.btn--white:hover {
+  color: var(--color-primary-hover);
+  border-color: var(--color-primary-hover);
+  cursor: pointer;
 }
