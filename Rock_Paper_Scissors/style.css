@@ -1,12 +1,10 @@
-* {
-  margin: 0;
-  padding: 0;
-}
-
 :root {
   --color-primary: #0e63f3;
   --color-primary-hover: #0b4dbf;
   --color-light: #fff;
+  --color-sucess: #4dcc7d;
+  --color-danger: #fc121b;
+  --color-muted: #464647;
 }
 
 body {
@@ -15,6 +13,29 @@ body {
   font-size: calc(12px + 0.15vw);
   font-weight: 500;
   line-height: 1.6;
+  margin: 0;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+p {
+  margin: 0;
+}
+
+h1 {
+  font-size: 1.8em;
+}
+
+h1,
+h2 {
+  line-height: 1.3;
+}
+
+p {
+  margin-bottom: 15px;
 }
 
 header {
@@ -83,10 +104,8 @@ header {
 
 .choices__box:hover {
   cursor: pointer;
-  background: darkorange;
 }
 
-#action-message,
 .time__left {
   text-align: center;
   color: white;
@@ -102,17 +121,17 @@ header {
 }
 
 .green-glow {
-  background-color: #4dcc7d;
+  background-color: var(--color-sucess);
   box-shadow: 0 0 10px #31b43a;
 }
 
 .red-glow {
-  background-color: #fc121b;
+  background-color: var(--color-danger);
   box-shadow: 0 0 10px #d01115;
 }
 
 .grey-glow {
-  background-color: #464647;
+  background-color: var(--color-muted);
   box-shadow: 0 0 10px #25292b;
 }
 
