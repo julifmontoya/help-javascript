@@ -10,18 +10,17 @@
 
 <body>
     <header>
-        <h1>Piedra, Papel o Tijera</h1>
+        <h1 class="title-main">Piedra, Papel o Tijera</h1>
     </header>
     <div class="score-board">
-        <div id="user-label" class="badge">user</div>
-        <div id="computer-label" class="badge">comp</div>
+        <div id="user-label" class="score-board__badge">user</div>
+        <div id="computer-label" class="score-board__badge">comp</div>
         <span id="user-score">0</span>:<span id="computer-score">0 </span>
     </div>
     <div class="result">
-        Papel cubre a la roca | ¡Tú ganas!
     </div>
     <div class="choices">
-        <div class="choice" id="r">
+        <div class="choices__box" id="r">
             <svg class="icon" version="1.1" xmlns="http://www.w3.org/2000/svg"
                 xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="72.745px" height="72.744px"
                 viewBox="0 0 72.745 72.744" style="enable-background:new 0 0 72.745 72.744;" xml:space="preserve">
@@ -46,7 +45,7 @@
                 </g>
             </svg>
         </div>
-        <div class="choice" id="p">
+        <div class="choices__box" id="p">
             <svg class="icon" enable-background="new 0 0 24 24" height="512" viewBox="0 0 24 24" width="512"
                 xmlns="http://www.w3.org/2000/svg">
                 <path
@@ -55,7 +54,7 @@
                     d="m20.25 4h-11.5c-1.517 0-2.75 1.233-2.75 2.75v14.5c0 1.517 1.233 2.75 2.75 2.75h11.5c1.517 0 2.75-1.233 2.75-2.75v-14.5c0-1.517-1.233-2.75-2.75-2.75zm-2 17h-7.5c-.414 0-.75-.336-.75-.75s.336-.75.75-.75h7.5c.414 0 .75.336.75.75s-.336.75-.75.75zm0-4h-7.5c-.414 0-.75-.336-.75-.75s.336-.75.75-.75h7.5c.414 0 .75.336.75.75s-.336.75-.75.75zm0-3.5h-7.5c-.414 0-.75-.336-.75-.75s.336-.75.75-.75h7.5c.414 0 .75.336.75.75s-.336.75-.75.75zm0-4h-7.5c-.414 0-.75-.336-.75-.75s.336-.75.75-.75h7.5c.414 0 .75.336.75.75s-.336.75-.75.75z" />
             </svg>
         </div>
-        <div class="choice" id="s">
+        <div class="choices__box" id="s">
             <svg class="icon" version="1.1" xmlns="http://www.w3.org/2000/svg"
                 xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 512 512"
                 style="enable-background:new 0 0 512 512;" xml:space="preserve">
@@ -87,7 +86,6 @@
             </svg>
         </div>
     </div>
-
     <p id="action-message">Haz tu movimiento</p>
     <script src="app.js"></script>
 </body>
