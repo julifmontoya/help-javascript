@@ -4,6 +4,7 @@ body {
   font-weight: 500;
   line-height: 1.6;
   margin: 0;
+      background-color: teal;
 }
 
 h1,
@@ -32,6 +33,8 @@ p {
 
 .title-main {
   text-align: center;
+  background-color: blanchedalmond;
+    padding: 10px;
 }
 
 .container {
