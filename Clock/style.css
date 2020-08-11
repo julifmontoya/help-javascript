@@ -1,0 +1,105 @@
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.clock {
+  width: 300px;
+  height: 300px;
+  background-color: #ccc;
+  border-radius: 50%;
+  border: 2px solid #ccc;
+  position: relative;
+}
+
+.clock__number {
+  --rotation: 0;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  transform: rotate(var(--rotation));
+  font-weight: 600;
+}
+
+.one {
+  --rotation: 30deg;
+}
+.two {
+  --rotation: 60deg;
+}
+.three {
+  --rotation: 90deg;
+}
+.four {
+  --rotation: 120deg;
+}
+.five {
+  --rotation: 150deg;
+}
+.six {
+  --rotation: 180deg;
+}
+.seven {
+  --rotation: 210deg;
+}
+.eight {
+  --rotation: 240deg;
+}
+.nine {
+  --rotation: 270deg;
+}
+.ten {
+  --rotation: 300deg;
+}
+.eleven {
+  --rotation: 330deg;
+}
+
+.clock__hour,
+.clock__minute,
+.clock__second {
+  --rotation: 0;
+  position: absolute;
+  bottom: 50%;
+  left: 50%;
+  background-color: black;
+  transform-origin: bottom;
+  border: 1px solid #fff;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  z-index: 10;
+  transform: translateX(-50%) rotate(calc(var(--rotation) * 1deg));
+}
+
+.clock::after {
+  content: "";
+  position: absolute;
+  background-color: blue;
+  z-index: 11;
+  width: 15px;
+  height: 15px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border-radius: 50%;
+}
+
+.clock__second {
+  width: 3px;
+  height: 45%;
+  background-color: blue;
+}
+
+.clock__minute {
+  width: 7px;
+  height: 40%;
+  background-color: black;
+}
+
+.clock__hour {
+  width: 10px;
+  height: 35%;
+  background-color: black;
+}
