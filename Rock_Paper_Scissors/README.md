@@ -8,3 +8,5 @@ The basics is paper rock or scissors, but you can add spock lizard.
 Once the game is over the winner must be shown.
 The use of frameworks or libraries is not allowed.
 Template engines or preprocessors can be used.
+
+Link: https://julifmontoya.github.io/practices-JS/Rock_Paper_Scissors/
