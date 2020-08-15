@@ -9,18 +9,12 @@ const rock = document.getElementById("r");
 const paper = document.getElementById("p");
 const scissors = document.getElementById("s");
 
-const timeLeftDisplay = document.getElementById("time-left");
-let timeLeft = 3;
+let seconds = 3, $seconds = document.querySelector('#countdown');
 
-function countDown() {
-  setInterval(function () {
-    if (timeLeft <= 0) {
-      clearInterval((timeLeft = 0));
-    }
-    timeLeftDisplay.innerHTML = timeLeft;
-    timeLeft -= 1;
-  }, 1000);
-}
+(function countdown() {
+    $seconds.textContent = `${seconds} segundo${(seconds == 1 ?  '' :  's')}`
+    if(seconds --> 0) setTimeout(countdown, 1000)
+})();
 
 function getComputerChoice() {
   const choices = ["r", "p", "s"];
@@ -56,7 +50,7 @@ function lose(userChoice, ComputerChoice) {
   result.innerHTML = `${convertToWord(
     userChoice
   )} Es vencido por ${convertToWord(ComputerChoice)} ¡Perdiste!`;
-  userSelect.classList.add("red-glow");
+  userSelect.classList.add("red-glow", "jugado");
   setTimeout(() => {
     userSelect.classList.remove("red-glow");
   }, 1500);
@@ -97,6 +91,9 @@ function game(userChoice) {
 function main() {
   rock.addEventListener("click", () => {
     game("r");
+    const timeout = setTimeout(() => {
+      alert("Time Out");
+    }, 3000);
   });
 
   paper.addEventListener("click", () => {
