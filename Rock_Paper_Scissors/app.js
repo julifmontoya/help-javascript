@@ -9,13 +9,6 @@ const rock = document.getElementById("r");
 const paper = document.getElementById("p");
 const scissors = document.getElementById("s");
 
-let seconds = 3, $seconds = document.querySelector('#countdown');
-
-(function countdown() {
-    $seconds.textContent = `${seconds} segundo${(seconds == 1 ?  '' :  's')}`
-    if(seconds --> 0) setTimeout(countdown, 1000)
-})();
-
 function getComputerChoice() {
   const choices = ["r", "p", "s"];
   const randomNumber = Math.floor(Math.random() * 3);
@@ -91,18 +84,53 @@ function game(userChoice) {
 function main() {
   rock.addEventListener("click", () => {
     game("r");
-    const timeout = setTimeout(() => {
-      alert("Time Out");
-    }, 3000);
+    startCountDown(3, 1000, timeOver);
   });
 
   paper.addEventListener("click", () => {
     game("p");
+    startCountDown(3, 1000, timeOver);
   });
 
   scissors.addEventListener("click", () => {
     game("s");
+    startCountDown(3, 1000, timeOver);
   });
 }
 
 main();
+
+let timer;
+function startCountDown(i, p, f) {
+  // store parameters
+  if (timer) {
+    clearTimeout(timer);
+  }
+  let pause = p;
+  let fn = f;
+
+  // make reference to div
+  let countDownObj = document.getElementById("countDown");
+
+  countDownObj.count = function (i) {
+    // write out count
+    countDownObj.innerHTML = i;
+    if (i == 0) {
+      // execute function
+      fn();
+      // stop
+      return;
+    }
+    timer = setTimeout(function () {
+      countDownObj.count(i - 1);
+    }, pause);
+  };
+  // set it going
+  countDownObj.count(i);
+}
+
+function timeOver() {
+  alert("Tiempo Fuera. Presiona F5 si quieres jugar de nuevo");
+  const body = document.querySelector("body");
+  body.style["display"] = "none";
+}
