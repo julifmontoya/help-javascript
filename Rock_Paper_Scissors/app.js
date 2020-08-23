@@ -104,6 +104,8 @@ let timer;
 function startCountDown(i, p, f) {
   // store parameters
   if (timer) {
+	const timeOutMessageReset=  document.querySelector(".time__left");
+	timeOutMessageReset.innerHTML=`Tienes <span id="countDown">0</span> segundo(s) para jugar`;
     clearTimeout(timer);
   }
   let pause = p;
@@ -131,4 +133,6 @@ function startCountDown(i, p, f) {
 
 function timeOver() {
   alert("Tiempo Fuera.");
+  const timeOutMessage = document.querySelector(".time__left");
+  timeOutMessage.textContent=`Animo... Puedes seguir jugando ...`;
 }
