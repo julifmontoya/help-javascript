@@ -84,17 +84,17 @@ function game(userChoice) {
 function main() {
   rock.addEventListener("click", () => {
     game("r");
-    startCountDown(3, 1000, timeOver);
+    startCountDown(5, 1000, timeOver);
   });
 
   paper.addEventListener("click", () => {
     game("p");
-    startCountDown(3, 1000, timeOver);
+    startCountDown(5, 1000, timeOver);
   });
 
   scissors.addEventListener("click", () => {
     game("s");
-    startCountDown(3, 1000, timeOver);
+    startCountDown(5, 1000, timeOver);
   });
 }
 
@@ -130,7 +130,5 @@ function startCountDown(i, p, f) {
 }
 
 function timeOver() {
-  alert("Tiempo Fuera. Presiona F5 si quieres jugar de nuevo");
-  const body = document.querySelector("body");
-  body.style["display"] = "none";
+  alert("Tiempo Fuera.");
 }
