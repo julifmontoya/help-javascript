@@ -84,17 +84,17 @@ function game(userChoice) {
 function main() {
   rock.addEventListener("click", () => {
     game("r");
-    startCountDown(5, 1000, timeOver);
+    startCountDown(3, 1000, timeOver);
   });
 
   paper.addEventListener("click", () => {
     game("p");
-    startCountDown(5, 1000, timeOver);
+    startCountDown(3, 1000, timeOver);
   });
 
   scissors.addEventListener("click", () => {
     game("s");
-    startCountDown(5, 1000, timeOver);
+    startCountDown(3, 1000, timeOver);
   });
 }
 
