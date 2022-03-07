@@ -1,6 +1,7 @@
 -----------
 Async Await
 ----------
+
 try {
   const response = await window.axios.get(serverurl);
   const data = response.data.QuoteHotels;
@@ -10,10 +11,12 @@ try {
   this.filters = data.Filters;
 } catch {
   this.resultmsg = "Something went wrong. Try again!";
-}     
+}  
+
 -----------
 Promises
 ----------
+
 window.axios
 .post(serverurl, { url: encodeURI(url) })
 .then((response) => {
