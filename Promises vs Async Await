@@ -1,7 +1,6 @@
 -----------
 Async Await
 ----------
-
 try {
   const response = await window.axios.get(serverurl);
   const data = response.data.QuoteHotels;
@@ -16,7 +15,6 @@ try {
 -----------
 Promises
 ----------
-
 window.axios
 .post(serverurl, { url: encodeURI(url) })
 .then((response) => {
