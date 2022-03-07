@@ -1,0 +1,34 @@
+-----------
+Async Await
+----------
+try {
+  const response = await window.axios.get(serverurl);
+  const data = response.data.QuoteHotels;
+  this.hotels = data.Hotels.Hotel;
+  this.hotelsData = this.hotels;
+  this.selectFilterFunction();
+  this.filters = data.Filters;
+} catch {
+  this.resultmsg = "Something went wrong. Try again!";
+}     
+-----------
+Promises
+----------
+window.axios
+.post(serverurl, { url: encodeURI(url) })
+.then((response) => {
+  const data = response.data;
+  this.hotels = data.Hotels.Hotel;
+  this.hotelsData = ths.hotels;
+  this.selectFilterFunction();
+  this.filters = data.Filters;
+  } else {
+    ths.resultmsg = data.Error.Description;
+  }
+})
+.catch(()=> {
+  ths.resultmsg = "Something went wrong. Try again!";
+})
+.then(()=> {
+  ths.request = false;
+});
