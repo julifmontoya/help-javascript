@@ -1,0 +1,12 @@
+    async getData() {
+      const delay = time => new Promise(res=>setTimeout(res,time));
+
+      const response = await service.get(`tours/`);
+      this.data = response.data;
+
+      await delay(10000);
+
+      const response2 = await service.get(`tours/`);
+      let data2 = response2.data;
+    },
+  },
