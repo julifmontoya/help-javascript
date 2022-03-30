@@ -1,0 +1,20 @@
+--------
+main.js
+--------
+window.serverurl = "http://127.0.0.1:8000/v1/";
+window.axios = require("axios");
+
+const response2 = await window.axios.get(`${window.serverurl}markup/`);
+const data = response2.data;
+
+--------
+service.js
+--------
+import axios from "axios";
+const baseURL = "http://127.0.0.1:8000/v1/";
+export default axios.create({
+  baseURL,
+});
+
+const response2 = await service.get(`markup/`);
+const data = response2.data;
