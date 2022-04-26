@@ -1,0 +1,54 @@
+**********
+forEach
+**********
+let included_itinerary = [];
+this.included.forEach((v) => {
+  included_itinerary.push({
+    description: v.description,
+    included: true,
+  });
+});
+
+**********
+map
+**********
+if (isFilesUploaded) {
+  if (processingFiles.length >= 1) {
+    this.files = processingFiles.map((file) => {
+      return new File([file.file], file.file.name, {
+        type: file.type,
+      });
+    });
+  }
+}
+
+**********
+map
+**********
+this.images_pond = this.details.images.map((item) => item.image);
+
+**********
+map and ...
+**********
+getSelectedValueDest(value) {
+  let item = value.item;
+  let destinations = [...this.visited_destinations];
+  let newDes = destinations.map((el) => {
+    if (el.id === value.id) {
+      return {
+        ...el,
+        city_id: item.id,
+        city_name: `${item.city}, ${item.state}, ${item.country}`,
+      };
+    } else if (el.city_id === "") {
+      return {
+        ...el,
+        city_id: item.id,
+        city_name: `${item.city}, ${item.state}, ${item.country}`,
+      };
+    } else {
+      return el;
+    }
+  });
+  this.visited_destinations = newDes;
+},
