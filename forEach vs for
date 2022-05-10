@@ -1,3 +1,6 @@
+**********
+forEach
+**********
 this.tAdults.forEach((item) => {
   travelersInfo.push({
     fullName: item.fullName,
@@ -8,7 +11,9 @@ this.tAdults.forEach((item) => {
 });
 
 
-
+**********
+for
+**********
 let travelersInfo = [];
 for (let i = 0; i < this.tAdults.length; i++) {
 travelersInfo.push({
