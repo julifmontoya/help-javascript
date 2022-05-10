@@ -1,0 +1,20 @@
+this.tAdults.forEach((item) => {
+  travelersInfo.push({
+    fullName: item.fullName,
+    idNumber: item.idNumber,
+    dob: item.dob,
+    type: "adult"
+  });
+});
+
+
+
+let travelersInfo = [];
+for (let i = 0; i < this.tAdults.length; i++) {
+travelersInfo.push({
+fullName: this.tAdults[i].fullName,
+idNumber: this.tAdults[i].idNumber,
+dob: this.tAdults[i].dob,
+type: "adult",
+});
+}
