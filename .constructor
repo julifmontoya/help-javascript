@@ -1,0 +1,17 @@
+if (!(Object.keys(query).length === 0 && query.constructor === Object)) {
+  this.dId = query.dId;
+  this.destination = query.destination;
+  this.from = query.from;
+  this.to = query.to;
+  this.adults = query.adults;
+  this.childs = query.childs;
+
+  this.query = {
+    dId: this.dId,
+    destination: this.destination,
+    from: this.from,
+    to: this.to,
+    adults: this.adults,
+    childs: this.childs,
+  };
+}
