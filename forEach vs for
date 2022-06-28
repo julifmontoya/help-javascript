@@ -10,16 +10,69 @@ this.tAdults.forEach((item) => {
   });
 });
 
+ this.calendars.forEach((option) => {
+   option.tours_days_rates.forEach((rate) => {
+     if (rate.id != undefined) {
+       rates.push({
+         id: rate.id,
+         date: rate.date,
+         price_adult: rate.price_adult,
+         price_child: rate.price_child,
+         price_infant: rate.price_infant,
+         quota: rate.quota,
+         tour_option: option.id,
+       });
+     } else {
+       rates.push({
+         date: rate.date,
+         price_adult: rate.price_adult,
+         price_child: rate.price_child,
+         price_infant: rate.price_infant,
+         quota: rate.quota,
+         tour_option: option.id,
+       });
+     }
+   });
+ });
 
 **********
 for
 **********
 let travelersInfo = [];
 for (let i = 0; i < this.tAdults.length; i++) {
-travelersInfo.push({
-fullName: this.tAdults[i].fullName,
-idNumber: this.tAdults[i].idNumber,
-dob: this.tAdults[i].dob,
-type: "adult",
+  travelersInfo.push({
+  fullName: this.tAdults[i].fullName,
+  idNumber: this.tAdults[i].idNumber,
+  dob: this.tAdults[i].dob,
+  type: "adult",
 });
+}
+
+for (let i = 0; i < this.calendars.length; i++) {
+  for (let j = 0; j < this.calendars[i].tours_days_rates.length; j++) {
+    if (this.calendars[i].tours_days_rates[j].price_adult == 0)
+       {this.price_empty = true; 
+    } else {
+      if (this.calendars[i].tours_days_rates[j].id != undefined) {
+        rates.push({
+          id: this.calendars[i].tours_days_rates[j].id,
+          date: this.calendars[i].tours_days_rates[j].date,
+          price_adult: this.calendars[i].tours_days_rates[j].price_adult,
+          price_child: this.calendars[i].tours_days_rates[j].price_child,
+          price_infant: this.calendars[i].tours_days_rates[j].price_infant,
+          quota: this.calendars[i].tours_days_rates[j].quota,
+          tour_option: this.calendars[i].id,
+        });
+      } else {
+        rates.push({
+          date: this.calendars[i].tours_days_rates[j].date,
+          price_adult: this.calendars[i].tours_days_rates[j].price_adult,
+          price_child: this.calendars[i].tours_days_rates[j].price_child,
+          price_infant: this.calendars[i].tours_days_rates[j].price_infant,
+          quota: this.calendars[i].tours_days_rates[j].quota,
+          tour_option: this.calendars[i].id,
+        });
+      }
+    }
+  }
 }
